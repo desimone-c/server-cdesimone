@@ -5,7 +5,11 @@ import helloController
 import userController   from "./controllers/users-controller.js";
 import tuitsController from "./controllers/tuits-controller.js";
 
-const cors_options = {origin : "https://a8--affectionate-kalam-2e2bec.netlify.app/"};
+const cors_options = {
+    origin: function (origin, callback) {
+            callback(null, true)
+    }
+};
 
 const app = express();
 app.use(cors(cors_options));
