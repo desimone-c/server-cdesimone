@@ -3,7 +3,7 @@
   "name": "server-cdesimone",
   "version": "1.0.0",
   "description": "Node.js HTTP Server for Tuiter",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
