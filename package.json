@@ -1,0 +1,25 @@
+{
+  "name": "server-cdesimone",
+  "version": "1.0.0",
+  "description": "Node.js HTTP Server for Tuiter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desimone-c/server-cdesimone.git"
+  },
+  "keywords": [
+    "Node",
+    "REST",
+    "Server",
+    "HTTP"
+  ],
+  "author": "Christian DeSimone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/desimone-c/server-cdesimone/issues"
+  },
+  "homepage": "https://github.com/desimone-c/server-cdesimone#readme"
+}
