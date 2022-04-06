@@ -5,8 +5,10 @@ import helloController
 import userController   from "./controllers/users-controller.js";
 import tuitsController from "./controllers/tuits-controller.js";
 
+const cors_options = {origin : "https://server-cdesimone.herokuapp.com/"};
+
 const app = express();
-app.use(cors());
+app.use(cors(cors_options));
 app.use(express.json());
 helloController(app);
 userController(app);
