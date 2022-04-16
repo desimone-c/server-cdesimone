@@ -24,7 +24,10 @@
   },
   "homepage": "https://github.com/desimone-c/server-cdesimone#readme",
   "dependencies": {
+    "axios": "^0.26.1",
     "cors": "^2.8.5",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "mongoose": "^6.3.0",
+    "protobufjs": "^6.11.2"
   }
 }

@@ -1,26 +1,28 @@
-import posts from "./tuits.js";
-let tuits = posts;
+import * as tuitsDao from "../mongo/daos/tuits-dao.js";
 
-const createTuit = (req, res) => {
+const createTuit = async (req, res) => {
     const newTuit = req.body;
-    newTuit._id = (new Date()).getTime()+'';
-    newTuit.likes = 0;
-    tuits.push(newTuit);
-    res.json(newTuit);
+    const insertedTuit = await tuitsDao.createTuit(newTuit);
+    console.log(insertedTuit);
+    res.json(insertedTuit);
 }
-const findAllTuits = (req, res) =>
-    res.json(tuits);
-const updateTuit = (req, res) => {
+
+const findAllTuits = async (req, res) => {
+    const tuits = await tuitsDao.findAllTuits();
+    return res.json(tuits);
+}
+
+const updateTuit = async (req, res) => {
     const tuitdIdToUpdate = req.params.tid;
     const updatedTuit = req.body;
-    tuits = tuits.map(t => t._id === tuitdIdToUpdate ? {...t, ...updatedTuit} : t);
-    res.sendStatus(200);
+    const status = await tuitsDao.updateTuit(tuitdIdToUpdate, updatedTuit);
+    res.send(status);
 
 }
-const deleteTuit = (req, res) => {
+const deleteTuit = async (req, res) => {
     const tuitdIdToDelete = req.params.tid;
-    tuits = tuits.filter(t => t._id !== tuitdIdToDelete);
-    res.sendStatus(200);
+    const status = await tuitsDao.deleteTuit(tuitdIdToDelete);
+    res.send(status);
 }
 
 export default (app) => {
